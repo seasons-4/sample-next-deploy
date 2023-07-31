@@ -1,8 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-input:-webkit-autofill {
-  box-shadow: 0 0 0 1000px rgb(254 249 195) inset;
-}
