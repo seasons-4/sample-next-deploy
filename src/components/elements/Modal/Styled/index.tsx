@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Close from '~/public/close.svg'
-import useModal from '../'
+import useModal from '..'
 
 type Props = {
   title: React.ReactNode
