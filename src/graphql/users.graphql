@@ -1,0 +1,19 @@
+query GetUsersByName($name: String!) {
+  users(where: { name: { _eq: $name } }) {
+    name
+  }
+}
+
+mutation UpsertUser($auth_id: String!, $name: String!) {
+  insert_users(
+    objects: [{ auth_id: $auth_id, name: $name }]
+    on_conflict: { constraint: users_auth_id_key, update_columns: [name, last_logged_in] }
+  ) {
+    returning {
+      id
+      auth_id
+      name
+      last_logged_in
+    }
+  }
+}
