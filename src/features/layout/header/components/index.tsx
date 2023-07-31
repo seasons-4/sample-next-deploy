@@ -6,9 +6,9 @@ import { usePathname } from 'next/navigation'
 import { memo } from 'react'
 
 import { StyledLink } from '~/src/components/elements/Link'
-import UserIcon from '~/src/features/layout/header/components/Icon/User'
 import { APP_TITLE } from '~/src/features/layout/header/constants'
 import { useWindowSize } from '~/src/hooks/useWindowSize'
+import UserIcon from './icon/User'
 
 const HeaderContents: React.FC = () => {
   const { isMobile } = useWindowSize()
