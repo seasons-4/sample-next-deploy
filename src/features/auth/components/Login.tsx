@@ -1,11 +1,6 @@
 'use client'
 
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from '@firebase/auth'
+import { getAuth, GoogleAuthProvider, signInWithPopup } from '@firebase/auth'
 import { signIn } from 'next-auth/react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -33,19 +28,19 @@ const LoginForm: React.FC = () => {
       .finally(() => setIsLoading(false))
   }
 
-  const onClickSub = () => {
-    setIsLoading(true)
-    const sub = {
-      email: 'hoge@hoge.hoge',
-      password: 'hogehoge',
-    }
-    return signInWithEmailAndPassword(auth, sub.email, sub.password)
-      .then((credential) => credential.user.getIdToken(true))
-      .then((idToken) => signIn('credentials', { idToken, redirect: false }))
-      .then(() => router.push('/'))
-      .catch((e) => console.error(e))
-      .finally(() => setIsLoading(false))
-  }
+  // const onClickSub = () => {
+  //   setIsLoading(true)
+  //   const sub = {
+  //     email: 'hoge@hoge.hoge',
+  //     password: 'hogehoge',
+  //   }
+  //   return signInWithEmailAndPassword(auth, sub.email, sub.password)
+  //     .then((credential) => credential.user.getIdToken(true))
+  //     .then((idToken) => signIn('credentials', { idToken, redirect: false }))
+  //     .then(() => router.push('/'))
+  //     .catch((e) => console.error(e))
+  //     .finally(() => setIsLoading(false))
+  // }
 
   return (
     <div className='flex flex-col items-center justify-center py-4'>
@@ -73,7 +68,7 @@ const LoginForm: React.FC = () => {
         )}
       </StyledButton>
 
-      <StyledButton
+      {/* <StyledButton
         onClick={onClickSub}
         type='button'
         className='mt-4 flex min-w-[12rem] flex-row items-center justify-center'
@@ -85,19 +80,7 @@ const LoginForm: React.FC = () => {
         ) : (
           <span className='font-bold italic text-gray-500'>Subアカウントを使用</span>
         )}
-      </StyledButton>
-
-      {/* <div className="relative my-8 w-full text-center">
-        <hr
-          className={`border-gray-400
-          after:absolute
-          after:top-1/2 after:-translate-y-2/4 after:-translate-x-2/4 after:bg-white
-          after:px-2
-          after:text-gray-400 after:content-[attr(attr-content)]`}
-        />
-      </div>
-
-      <EntryForm submitHandler={onSubmit}>login</EntryForm> */}
+      </StyledButton> */}
     </div>
   )
 }
