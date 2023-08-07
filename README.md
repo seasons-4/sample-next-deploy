@@ -3,7 +3,7 @@
 霜降り明星のオールナイトニッポンのコーナー「野党」をアプリ化したもの。
 ボケとツッコミを１セットで投稿し、他人が投稿したものを閲覧できる。
 ユーザーアカウントには Google アカウントのみ使用可能。
-デプロイ先: https://sample-next-deploy-hz61jqf9i-seasons-4.vercel.app/
+https://sample-next-deploy.vercel.app/
 
 ## 使用技術
 
